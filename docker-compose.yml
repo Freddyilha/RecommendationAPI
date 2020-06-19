@@ -1,0 +1,25 @@
+version: '3'
+services:
+  fastmatch:
+    image: fast-match
+    container_name: fast-match
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "7676:7676"
+    volumes:
+      - "./src:/app"
+      - "./database:/database"
+
+  database:
+    image: mysql:5.7
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    ports:
+      - "3309:3309"
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+      - "MYSQL_DATABASE=db_fast_match"
+    volumes:
+      - "./database/data:/var/lib/mysql"
+
