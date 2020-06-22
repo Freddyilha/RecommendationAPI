@@ -1,12 +1,8 @@
 from flask import Flask
-from flask import render_template
+from handlers.routes import routes_config
 
 app = Flask(__name__, template_folder='templates')
-
-@app.route("/")
-def hello():  
-    data = "Hello, World"
-    return render_template('index.html', data=data)
+routes_config(app)
 
 # run the application
 if __name__ == "__main__":  
