@@ -24,3 +24,9 @@ def test_post_route():
     # assert ('Hello World!' in response.data.decode('utf-8')) == True
     assert 0
 
+# Check if received data
+# Check if data type is accepted probably .csv
+# Check if data correctly processed
+# Check if data is avaiable to download
+# Check if data is deleted after x hours
+
